@@ -123,6 +123,7 @@ Public Module util
             dtThermostats.Columns.Add("RefID", GetType(Integer))
             dtThermostats.Columns.Add("ParentRefID", GetType(Integer))
             dtThermostats.Columns.Add("Value", GetType(Integer))
+            dtThermostats.Columns.Add("Addr", GetType(String))
         End If
     End Sub
 

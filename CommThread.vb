@@ -80,7 +80,7 @@ Public Class CommThread
 90:
 100:    Do
 110:        Try
-120:            Thread.Sleep(100)
+120:            Thread.Sleep(50)
 130:
 140:            If TransmitQ.Count > 0 Then
 150:                Dim ToWrite As String = ""
@@ -150,6 +150,7 @@ Public Class CommThread
 40:     Dim Rows() As DataRow
 50:     Dim oThermostat As Thermostat = Nothing
 60:     Try
+            Log("Processing Raw String - " & text, LogLevel.Debug)
 70:         'extract the qualifier (address) for the thermostat
 80:         iStart = InStr(text, "A=") - 1
             'just keep the data you need
@@ -164,7 +165,7 @@ Public Class CommThread
                     oThermostat.ProcessDataReceived(text)
                 Next
             Else 'find the correct thermostat refID the data is for
-                Rows = dtThermostats.Select("DeviceType=0 And Value='" & addr & "'")
+                Rows = dtThermostats.Select("DeviceType=0 And Addr='" & addr & "'")
 150:            If Rows IsNot Nothing AndAlso Rows.Count > 0 Then
 160:                'get the thermostat and send the data to it to be processed.
 170:                oThermostat = arrThermostats(Rows(0)("RefID").ToString)
@@ -174,7 +175,7 @@ Public Class CommThread
                     Log("Return dataline: " & text, LogLevel.Err)
                 End If
             End If
-140:       
+140:
 190:    Catch ex As Exception
 200:        Log("Error in ProcessResponse, " & ex.Message & " Line Number:" & Err.Erl, LogLevel.Err)
             Log("Error in ProcessResponse, return dataline: " & text, LogLevel.Err)

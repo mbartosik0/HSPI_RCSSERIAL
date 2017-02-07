@@ -59,7 +59,7 @@ Public Class Thermostat
 
     Enum eAddress
         Low = 1
-        High = 15
+        High = 50
     End Enum
 #End Region
 
@@ -80,7 +80,7 @@ Public Class Thermostat
 
         dv = GetDevice(eParent)
 
-        dtThermostats.Rows.Add(eParent, RefID, RefID, dv.devValue(hs)) 'set the child and parent ref ID's to the same
+        dtThermostats.Rows.Add(eParent, RefID, RefID, dv.devValue(hs), Me.Address.ToString) 'set the child and parent ref ID's to the same
         dtThermostats.AcceptChanges()
 
         Dim PED As clsPlugExtraData = dv.PlugExtraData_Get(hs)
@@ -96,6 +96,8 @@ Public Class Thermostat
         dv.PlugExtraData_Set(hs) = PED
         Me.Name = DeviceName
         Poll()
+
+
     End Sub
 #End Region
 
@@ -343,9 +345,9 @@ Public Class Thermostat
 
         Select Case DeviceType
             Case eDeviceTypes.Heat_SetPoint
-                Command = "SPH=" & CStr(Value)
+                Command = "SPH=" & CStr(Value) & " SP=" & CStr(Value)
             Case eDeviceTypes.Cool_SetPoint
-                Command = "SPC=" & CStr(Value)
+                Command = "SPC=" & CStr(Value) & " SP=" & CStr(Value)
             Case eDeviceTypes.Fan
                 Select Case Value
                     Case eFan.Auto
@@ -367,16 +369,16 @@ Public Class Thermostat
                     Case eMode.Aux
                         Command = "M=EH"
                     Case eMode.Cool
-                        Command = "M=2"
+                        Command = "M=C"
                     Case eMode.Heat
-                        Command = "M=1"
+                        Command = "M=H"
                     Case eMode.Off
                         Command = "M=0"
                 End Select
         End Select
         If Command.Length > 0 Then
             Addr = "A=" & Me.Address.ToString & " "
-            Command = Addr & "O=00 " & Command & vbCr
+            Command = Addr & Command & vbCr
             SendCMD(Command)
         End If
     End Sub
@@ -575,13 +577,14 @@ Public Class Thermostat
 #End Region
 
 #Region "Public Subs/Functions"
+
     Public Sub Poll()
         Try
             Log("In Poll: Time: " & Now(), LogLevel.Debug)
             Try
-                SendCMD("R=1") ' This gets Temp and Mode data
-                SendCMD("R=2") ' This gets Operating Data
-                SendCMD("SC=?") ' This gets Hold mode
+                SendCMD("A=" & Me.Address.ToString & " O=" & Me.Address.ToString & " R=1" & vbCr) ' This gets Temp and Mode data
+                SendCMD("A=" & Me.Address.ToString & " O=" & Me.Address.ToString & " R=2" & vbCr) ' This gets Operating Data
+                SendCMD("A=" & Me.Address.ToString & " O=" & Me.Address.ToString & " SC=?" & vbCr) ' This gets Hold mode
             Catch ex As Exception
                 Log("Error in Poll: " & ex.Message, LogLevel.Normal)
             End Try

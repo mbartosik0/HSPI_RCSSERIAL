@@ -1,0 +1,10 @@
+C:\Users\tgomillion\Desktop\HS3\HomeSeer\HomeSeer\HSPI_RCSSERIAL.exe.config
+C:\Users\tgomillion\Desktop\HS3\HomeSeer\HomeSeer\HSPI_RCSSERIAL.exe
+C:\Users\tgomillion\Desktop\HS3\HomeSeer\HomeSeer\HSPI_RCSSERIAL.pdb
+C:\Users\tgomillion\Desktop\HS3\HomeSeer\HomeSeer\HSPI_RCSSERIAL.xml
+C:\Users\tgomillion\Desktop\Homeseer RCS\HSPI_RCSSERIAL\obj\x86\Debug\HSPI_RCSSERIALORIGINAL.vbprojResolveAssemblyReference.cache
+C:\Users\tgomillion\Desktop\Homeseer RCS\HSPI_RCSSERIAL\obj\x86\Debug\HSPI_RCSSERIAL.Resources.resources
+C:\Users\tgomillion\Desktop\Homeseer RCS\HSPI_RCSSERIAL\obj\x86\Debug\HSPI_RCSSERIALORIGINAL.vbproj.GenerateResource.Cache
+C:\Users\tgomillion\Desktop\Homeseer RCS\HSPI_RCSSERIAL\obj\x86\Debug\HSPI_RCSSERIAL.exe
+C:\Users\tgomillion\Desktop\Homeseer RCS\HSPI_RCSSERIAL\obj\x86\Debug\HSPI_RCSSERIAL.xml
+C:\Users\tgomillion\Desktop\Homeseer RCS\HSPI_RCSSERIAL\obj\x86\Debug\HSPI_RCSSERIAL.pdb

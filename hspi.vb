@@ -257,7 +257,6 @@ Public Class HSPI
         Dim CommandString As String
 
         UID = ActInfo.UID.ToString
-
         Try
             If Not (ActInfo.DataIn Is Nothing) Then
                 DeSerializeObject(ActInfo.DataIn, action)
@@ -278,7 +277,6 @@ Public Class HSPI
             Next
 
             CommandString = "A=" & Address & " O=" & Zone & " " & Command & "=" & Value & vbCr
-            
             ComThread.SendCommand(CommandString)
 
         Catch ex As Exception

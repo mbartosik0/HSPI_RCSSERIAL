@@ -570,7 +570,7 @@ Public Class RCSSerialConfig
                 AutoSubmit = False
             Case "DropDownListNewStatID", "DropDownListEditStatID"
                 UsedAddressList = BuildUsedStatAddressList()
-                For i = 1 To 15
+                For i = 1 To 50
                     If InStr(UsedAddressList, "|" & i.ToString & "|") = 0 Or SelectedValue <> "" Then
                         ReDim Preserve DataPairs(x)
                         DataPairs(x).Name = i.ToString

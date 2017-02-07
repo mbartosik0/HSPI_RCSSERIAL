@@ -20,3 +20,7 @@ C:\HS\Plugins\HSPI_RCSSERIAL\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\HS\Plugins\HSPI_RCSSERIAL\obj\x86\Debug\HSPI_RCSSERIAL.Resources.resources
 C:\HS\Plugins\HSPI_RCSSERIAL\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\HS\Plugins\HSPI_RCSSERIAL\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\tgomillion\Desktop\HS3\HomeSeer\HomeSeer\HSPI_RCSSERIAL.exe.config
+C:\Users\tgomillion\Desktop\Homeseer RCS\HSPI_RCSSERIAL\obj\x86\Debug\HSPI_RCSSERIAL.exe
+C:\Users\tgomillion\Desktop\Homeseer RCS\HSPI_RCSSERIAL\obj\x86\Debug\HSPI_RCSSERIAL.xml
+C:\Users\tgomillion\Desktop\Homeseer RCS\HSPI_RCSSERIAL\obj\x86\Debug\HSPI_RCSSERIAL.pdb
